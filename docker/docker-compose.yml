@@ -20,10 +20,10 @@ services:
     image: kaggle/python:latest
     volumes:
       # Map repository sources.
-      - ../:/root/competition_local_env/
+      - ../:/root/competition_env/
       # Grant display access to X Server.
       - /tmp/.X11-unix:/tmp/.X11-unix
       # Grant audio access to PulseAudio.
       - ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native
     network_mode: host
-    command: /root/competition_local_env/docker/scripts/initialize-docker-container.sh
+    command: /root/competition_env/docker/scripts/initialize-docker-container.sh
